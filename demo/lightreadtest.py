@@ -26,7 +26,7 @@ driver.find_element_by_css_selector('#Form > table > tbody > tr > td:nth-child(3
 driver.switch_to.default_content()
 ##切换到添加任务页面iframe
 driver.switch_to.frame(driver.find_element_by_id('_DialogFrame_0'))
-driver.find_element_by_css_selector('#NAME').send_keys(u'测试自动任务下发15')
+driver.find_element_by_css_selector('#NAME').send_keys(u'测试自动任务下发19')
 driver.find_element_by_css_selector('#MMS_ID').send_keys('2281')
 driver.find_element_by_css_selector('#GWNUMBER').click()
 driver.find_element_by_css_selector('#GWNUMBER > option:nth-child(2)').click()
@@ -40,12 +40,12 @@ group = driver.find_element_by_css_selector("#MOBILE_GROUP>[value='361']").text
 # print(group)
 js = 'document.getElementById("SEND_TIME").removeAttribute("readonly")'
 driver.execute_script(js)
-driver.find_element_by_id('SEND_TIME').send_keys('2018-11-08 15:34')
+driver.find_element_by_id('SEND_TIME').send_keys('2018-11-14 18:28')
 time.sleep(1)
 driver.find_element_by_id('SEND_TIME').click()
 js1 = 'document.getElementById("REISSUE_TIME").removeAttribute("readonly")'
 driver.execute_script(js1)
-driver.find_element_by_id('REISSUE_TIME').send_keys('2018-11-08 15:36')
+driver.find_element_by_id('REISSUE_TIME').send_keys('2018-11-14 18:30')
 time.sleep(1)
 driver.find_element_by_id('REISSUE_TIME').click()
 ##启用灰名单
@@ -74,6 +74,7 @@ time.sleep(2)
 driver.switch_to.default_content()
 driver.find_element_by_css_selector('#sidebar-collapse > i').click()
 driver.find_element_by_css_selector('#lm29 > a > span').click()
+time.sleep(1)
 driver.find_element_by_css_selector('#z46 > a').click()
 driver.switch_to.frame(driver.find_element_by_id('mainFrame'))
 driver.switch_to.frame(driver.find_element_by_id('page_z46'))

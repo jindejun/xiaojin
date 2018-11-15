@@ -1,12 +1,12 @@
 import util.shibie
-import time
+import testtime
 class login_go():
     def __init__(self,driver):
         self.driver = driver
 
     def open_url(self,url):
         self.driver.get(url)
-        time.sleep(2)
+        testtime.sleep(2)
         self.driver.maximize_window()
 
     def login(self,loginname,password):
@@ -14,12 +14,12 @@ class login_go():
         self.driver.find_element_by_name("password").send_keys(password)
         code = util.shibie.WebUntil().verfyCode(self.driver,ID="codeImg")
         self.driver.find_element_by_id('code').send_keys(code)
-        time.sleep(2)
+        testtime.sleep(2)
         while True:
             if 'Index' in self.driver.current_url:
                 print('成功登陆')
                 break
-                time.sleep(2)
+                testtime.sleep(2)
             elif len(code) > 4:
                 print('验证码大于4位,再次识别')
                 self.driver.find_element_by_id('code').clear()
@@ -47,7 +47,7 @@ class noturl():
         self.driver.find_element_by_name("password").send_keys(password)
         code = util.shibie.WebUntil().verfyCode(self.driver,ID="codeImg")
         self.driver.find_element_by_id('code').send_keys(code)
-        time.sleep(2)
+        testtime.sleep(2)
         while True:
             if 'Index' in self.driver.current_url:
                 print('成功登陆')
